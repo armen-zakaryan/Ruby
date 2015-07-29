@@ -1,9 +1,13 @@
 class ArticlesController < ApplicationController
+  @@counter = {
+      'counter'=> 0,
+      'counter_in_new' => 0
+  }
+  @@id=0
 
   def index
     # We keep this in instance variable because Rails will pass all instance variables to the view.
-    @article = Article.all
-    tt = 90
+    @articles = Article.all
   end
 
   def show
@@ -12,13 +16,41 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    #fake instance to avoid an error in html
+    @article = Article.new
+  end
+
+  def edit
+    @article = Article.find(params[:id])
   end
 
   def create
-    @article = Article.new( article_params )
+    @article = Article.new(article_params)
+    @@id = @article.object_id
 
-    @article.save
-    redirect_to @article
+    if @article.save
+      redirect_to @article
+    else
+      render 'new'
+      #redirect_to('/articles/new')
+    end
+  end
+
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    redirect_to articles_path
   end
 
   private
