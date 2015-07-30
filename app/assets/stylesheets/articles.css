@@ -1,0 +1,40 @@
+/* Place all the styles related to the articles controller here.
+ They will automatically be included in application.css.
+ You can use Sass (SCSS) here: http://sass-lang.com/
+*/
+ /*
+table {
+  margin: 50px auto;
+}
+tbody {
+  opacity: 0.9;
+  filter: alpha(opacity=25);
+  background: #c8ffff;
+  //border-radius: 5px;
+  //display: block;
+}
+*/
+
+tbody th {
+  padding: 10px 50px;
+  text-align: center;
+}
+tbody td {
+  padding: 15px;
+  text-align: center;
+}
+tbody tr:hover {
+  background: #c8ffff;
+}
+tbody tr:first-child:hover {
+  background: white;
+}
+.glyphicon-trash {
+  color: red;
+}
+.glyphicon-trash:hover {
+    color: #b00a49;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 9999;
+}
