@@ -1,11 +1,37 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div class="container">
+    <p>
+      <strong>Title:</strong>
+      <%= @article.title %>
+    </p>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+    <p>
+      <strong>Text:</strong>
+      <%= @article.text %>
+    </p>
 
-<%= link_to "See All", articles_path %>
+
+  <h3>Comments</h3>
+  <div class="row">
+    <table class="table table-bordered">
+      <tr>
+        <th>Commenter</th>
+        <th>Text</th>
+        <th colspan="3"></th>
+      </tr>
+
+      <%= render @article.comments %>
+    </table>
+  </div>
+
+
+  <div class="row">
+      <br>
+      <h2> Add a Comment </h2>
+      <%= render 'comments/form' %>
+
+
+  </div>
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'See all articles', articles_path %>
+
+</div>

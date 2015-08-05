@@ -5,6 +5,8 @@ class ArticlesController < ApplicationController
   }
   @@id=0
 
+  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+
   def index
     # We keep this in instance variable because Rails will pass all instance variables to the view.
     @articles = Article.all
