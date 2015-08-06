@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+
+  root 'welcome#index'
+
+  get 'home', :to => 'access#index'
+
+  # get 'access/login'
+  #
+  # get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -9,7 +16,9 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  root 'welcome#index'
+  match ':controller(/:action(/:id))', :via => [:get, :post]
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
