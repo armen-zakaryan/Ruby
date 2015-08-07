@@ -1,11 +1,6 @@
 class ArticlesController < ApplicationController
-  @@counter = {
-      'counter'=> 0,
-      'counter_in_new' => 0
-  }
-  @@id=0
 
-  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+  before_action :confirm_logged_in
 
   def index
     # We keep this in instance variable because Rails will pass all instance variables to the view.
@@ -28,7 +23,6 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @@id = @article.object_id
 
     if @article.save
       redirect_to @article
@@ -56,8 +50,8 @@ class ArticlesController < ApplicationController
   end
 
   private
-  def article_params
-    params.require(:article).permit(:title, :text)
-  end
+    def article_params
+      params.require(:article).permit(:title, :text)
+    end
 
 end
