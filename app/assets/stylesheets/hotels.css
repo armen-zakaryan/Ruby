@@ -1,0 +1,11 @@
+.h-hotels {
+    padding-top: 40px;
+}
+
+.h-hotel {
+}
+
+.h-hotel .panel {
+    width: 50%;
+    margin: 15px auto;
+}

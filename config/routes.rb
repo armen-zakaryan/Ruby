@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'hotels/index'
+
   root 'welcome#index'
 
   get 'home', :to => 'access#index'

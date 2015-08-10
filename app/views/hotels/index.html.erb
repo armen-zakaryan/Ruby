@@ -1,0 +1,16 @@
+<div class="container h-hotels">
+  <h1>Our Hotels</h1>
+
+  <% @hotels.each do |hotel| %>
+      <div class="h-hotel">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= hotel.name %></h3>
+            </div>
+            <div class="panel-body">
+              <%= hotel.address %>
+            </div>
+          </div>
+      </div>
+  <% end %>
+</div>

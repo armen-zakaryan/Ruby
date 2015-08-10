@@ -1,0 +1,17 @@
+.navbar {
+    margin-bottom: 0 !important;
+}
+
+/* Carousel */
+.h-carousel {
+    height: 100%;
+}
+.h-carousel .carousel-inner {
+    height: 720px;
+}
+.h-carousel .carousel-control span {
+    font-size: 6px;
+}
+.h-carousel .carousel-control {
+    width: 2%;
+}
