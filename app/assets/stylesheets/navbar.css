@@ -1,0 +1,7 @@
+.h-navbar {
+    padding: 0 50px;
+}
+.h-navbar .h-logo-img {
+    border-radius: 30px;
+    margin-top: 8px;
+}
