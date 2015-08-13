@@ -5,3 +5,12 @@
     border-radius: 30px;
     margin-top: 8px;
 }
+
+.h-login-info {
+    color: #b0a3ae;
+    margin: 10px 5px;
+}
+.h-login-info span {
+    color: #b05427;
+    font-size: 20px;
+}

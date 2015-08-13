@@ -3,8 +3,8 @@
 }
 
 /* Carousel */
-.h-carousel {
-    height: 100%;
+.h-carousel.carousel {
+    position: absolute;
 }
 .h-carousel .carousel-inner {
     height: 720px;
