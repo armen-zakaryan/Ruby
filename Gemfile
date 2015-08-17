@@ -29,6 +29,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # mysql
  gem 'mysql2'
 
+#AngularJs
+ gem 'angularjs-rails'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

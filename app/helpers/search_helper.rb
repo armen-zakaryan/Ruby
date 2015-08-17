@@ -1,7 +1,13 @@
 module SearchHelper
-  private
-  def search_by key
-    @hotels = Hotel.where(name: key)
+
+  def search_all(key)
+    @hotels = [].push Hotel.find(key)
   end
+
+  def get_by_key key
+    @hotels = get_by_key key
+  end
+
+
 
 end

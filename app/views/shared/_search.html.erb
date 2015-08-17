@@ -1,20 +1,46 @@
-<div class="h-search">
+<div class="h-search" ng-app="myApp">
 
 
 
   <div class="h-search-container">
     <h1>Title</h1>
     <div>put input key</div>
-    <input placeholder="Enter key top search">
+    <div >
+        <input placeholder="Enter key top search" value="<% %>" >
+    </div>
+    <%= request.original_url %>
+
+    <% search_all(5) %>
+<div ng-controller="SearchCtrl">
+    <div>{{key}}</div>
+    <input type=text" ng-model="key" placeholder="Type here "/>
+    <button class="btn btn-success" ng-click="submit()">Search</button>
+</div>
+    {{newEntry.name}}
+
     <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>...</li>
-      <li>4</li>
+      <% if @hotels %>
+        <% @hotels.each do |h| %>
+            <li><%= h.name + '    |    ' %> <%= h.address %></li>
+        <% end %>
+      <% end %>
     </ul>
+
+
+
+    <%= button_to "Search For", request.original_url, :class => "btn btn-info", :method => :get  %>
+
+
+
+
+    <!-- div class="h-search-buton">
+      <% form_tag('Search', {action: 'search', class: 'btn btn-info'}) do %>
+
+      <% end %>
+    </div -->
   </div>
 
-  <div class="h-search-buton">
+  <div class="h-search-ctrl-button">
     <button type="button" id="h-search-btn" class="btn btn-default" aria-label="Left Align">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>

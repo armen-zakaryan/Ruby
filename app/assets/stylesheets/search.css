@@ -6,21 +6,21 @@
     right: 0;
 }
 
-.h-search-container, .h-search-buton {
+.h-search-container, .h-search-ctrl-button {
     float: right;
 }
 
-.h-search-buton button{
+.h-search-ctrl-button button{
     padding:  3px 6px;
 }
-.h-search-buton span {
+.h-search-ctrl-button span {
     font-size: 15px;
     color: darkgreen;
 }
 
 .h-search-container {
     width: 0;
-    height: 250px;
+    height: 450px;
     overflow: hidden;
     transition: all 1.5s ease;
 }
@@ -28,24 +28,30 @@
     background: none;
     border: none;
 }
-.h-search-buton span:last-child {
+.h-search-ctrl-button span:last-child {
     display: none;
 }
 
 .content-visible .h-search-container {
     transition: all 1.5s ease;
-    width: 350px;
+    width: 550px;
     background: #F7F7F7;
     border-radius: 5px;
     border: 1px solid aqua;
     padding: 10px 50px 50px 50px;
 }
-.content-visible .h-search-buton span:first-child {
+.content-visible .h-search-ctrl-button span:first-child {
     display: none;
 }
-.content-visible .h-search-buton span:last-child {
+.content-visible .h-search-ctrl-button span:last-child {
     display: block;
 }
+.h-search-container .btn.btn-info, .btn.btn-info {
+    background-color: #44d1d5;
+    border-color: #269abc;
+}
 
-.content-visible .h-search-buton {
+.h-search-container ul{
+    max-height: 200px;
+    overflow: scroll;
 }
