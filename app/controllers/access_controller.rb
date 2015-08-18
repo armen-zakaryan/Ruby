@@ -22,7 +22,9 @@ class AccessController < ApplicationController
       session[:username] = authorized_user.username
       # TODO: mark user as logged in
       flash[:notice] = "You are now logged in."
-      redirect_to(:action => 'index')
+      redirect_back_or_default root_url
+      #redirect_back_or_default
+      #redirect_to(:action => 'index')
     else
       flash[:notice] = "Invalid username/password combination."
       redirect_to(:action => 'login')
@@ -35,6 +37,17 @@ class AccessController < ApplicationController
     session[:username] = nil
     flash[:notice] = "Logged out"
     redirect_to root_path
+  end
+
+
+
+
+
+
+  private
+  def redirect_back_or_default(default = nil)
+    redirect_to(session[:return_to] || default)
+    session[:return_to] = nil
   end
 
 

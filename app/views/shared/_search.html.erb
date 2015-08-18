@@ -10,13 +10,17 @@
     </div>
     <%= request.original_url %>
 
-    <% search_all(5) %>
-<div ng-controller="SearchCtrl">
+    <% search_all(1) %>
+    <%= 'here is: '+ url_for %>
+
+
+
+    <div ng-controller="SearchCtrl">
     <div>{{key}}</div>
     <input type=text" ng-model="key" placeholder="Type here "/>
     <button class="btn btn-success" ng-click="submit()">Search</button>
 </div>
-    {{newEntry.name}}
+
 
     <ul>
       <% if @hotels %>
