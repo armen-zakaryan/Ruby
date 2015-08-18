@@ -1,12 +1,12 @@
 .h-login {
-    margin-top: 150px;
+    //margin-top: 150px;
 }
 
 /* CSS used here will be applied after bootstrap.css */
 
 .h-login .panel-default {
     opacity: 1;
-    margin-top:30px;
+    margin-top:150px;
 }
 .h-login .form-group.last {
     margin-bottom:0px;

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150816042054) do
+ActiveRecord::Schema.define(version: 20150810150835) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150816042054) do
   add_index "comments", ["article_id"], name: "index_comments_on_article_id", using: :btree
 
   create_table "hotels", force: true do |t|
+    t.string   "name",                  null: false
     t.string   "phone",      limit: 50
     t.string   "email"
     t.string   "address"
@@ -39,17 +40,17 @@ ActiveRecord::Schema.define(version: 20150816042054) do
     t.string   "branches"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
   end
 
   create_table "users", force: true do |t|
     t.string   "first_name",      limit: 25
     t.string   "last_name",       limit: 50
-    t.string   "email",                      null: false
+    t.string   "email",                                  null: false
+    t.string   "username",                               null: false
+    t.string   "password_digest"
+    t.integer  "_type",                      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_digest"
-    t.string   "username"
   end
 
 end

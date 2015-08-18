@@ -4,6 +4,10 @@ class HotelsController < ApplicationController
     @hotels = Hotel.all
   end
 
+  def edit
+    @hotel = Hotel.find(params[:id])
+  end
+
 
 
 end

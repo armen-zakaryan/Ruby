@@ -26,7 +26,7 @@
             <li><%= link_to 'Articles', controller: 'articles' %></li>
             <li role="separator" class="divider"></li>
             <% if session[:username] %>
-                <li><%= link_to("Logout",:controller => 'access', :action => 'logout') %></li>
+                <li><%= link_to("Logout",:controller => 'api/v1/auth', :action => 'logout') %></li>
             <% else session[:username] %>
                 <li><%= link_to("Login", :controller => 'access', :action => 'login') %></li>
             <% end %>

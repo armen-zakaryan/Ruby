@@ -19,7 +19,7 @@
   development:
     adapter: mysql2
     encoding: utf8
-    database: 'test'
+    database: 'hotel'
     username: 'root'
     password: 'root'
     host: 127.0.0.1

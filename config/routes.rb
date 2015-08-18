@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+  resources :hotels
 
+  match 'api/v1/:controller(/:action)', :via => [:get, :post]
   match ':controller(/:action(/:id))', :via => [:get, :post]
 
 
