@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150810150835) do
+ActiveRecord::Schema.define(version: 20150819073229) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150810150835) do
     t.integer  "_type",                      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role",            limit: 11
   end
 
 end

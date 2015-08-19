@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  get 'home', :to => 'access#index'
+  #get 'home', :to => 'access#index'
 
   # get 'access/login'
   #
@@ -19,8 +19,13 @@ Rails.application.routes.draw do
   end
   resources :hotels
 
-  match 'api/v1/:controller(/:action)', :via => [:get, :post]
   match ':controller(/:action(/:id))', :via => [:get, :post]
+
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      resources :auth
+    end
+  end
 
 
 

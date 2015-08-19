@@ -5,12 +5,12 @@
       <div class="h-hotel">
           <div class="panel panel-info">
             <div class="panel-heading">
+              <%= link_to 'Edit', edit_hotel_url(hotel), class: 'glyphicon glyphicon-edit pull-right' %>
               <h3 class="panel-title"><%= hotel.name %></h3>
             </div>
             <div class="panel-body">
               <%= hotel.address %>
             </div>
-            <%= link_to 'Edit', edit_hotel_url(hotel), class: 'glyphicon glyphicon-edit' %>
           </div>
       </div>
   <% end %>
