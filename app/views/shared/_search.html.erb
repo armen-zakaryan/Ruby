@@ -1,54 +1,31 @@
 <div class="h-search" ng-app="myApp">
+  <div ng-controller="SearchCtrl" ng-class="{'content-visible': isSearchVisible}">
 
+      <div class="h-search-container">
+        <h3 class="">{{title}}</h3><hr>
 
+        <div class="form-group">
+          <label >Hotel:</label>
+          <input type="text" class="form-control" placeholder="Type any kew to search with">
+        </div>
 
-  <div class="h-search-container">
-    <h1>Title</h1>
-    <div>put input key</div>
-    <div >
-        <input placeholder="Enter key top search" value="<% %>" >
+        <button class="btn btn-info" ng-click="search()">Search</button>
+        <div class="h-result-container">
+            <div ng-repeat="hotel in hotels">
+
+              <span>{{hotel.email}} </span>
+              <span></span>
+
+            </div>
+        </div>
+      </div>
+
+    <div class="h-search-ctrl-button">
+      <button type="button" id="h-search-btn" class="btn btn-default" aria-label="Left Align" ng-click="toggleSearch()">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      </button>
     </div>
-    <%= request.original_url %>
 
-    <% search_all(1) %>
-    <%= 'here is: '+ url_for %>
-
-
-
-    <div ng-controller="SearchCtrl">
-    <div>{{key}}</div>
-    <input type=text" ng-model="key" placeholder="Type here "/>
-    <button class="btn btn-success" ng-click="submit()">Search</button>
-</div>
-
-
-    <ul>
-      <% if @hotels %>
-        <% @hotels.each do |h| %>
-            <li><%= h.name + '    |    ' %> <%= h.address %></li>
-        <% end %>
-      <% end %>
-    </ul>
-
-
-
-    <%= button_to "Search For", request.original_url, :class => "btn btn-info", :method => :get  %>
-
-
-
-
-    <!-- div class="h-search-buton">
-      <% form_tag('Search', {action: 'search', class: 'btn btn-info'}) do %>
-
-      <% end %>
-    </div -->
   </div>
-
-  <div class="h-search-ctrl-button">
-    <button type="button" id="h-search-btn" class="btn btn-default" aria-label="Left Align">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    </button>
-  </div>
-
 </div>

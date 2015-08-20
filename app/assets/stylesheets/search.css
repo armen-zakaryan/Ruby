@@ -10,8 +10,13 @@
     float: right;
 }
 
-.h-search-ctrl-button button{
-    padding:  3px 6px;
+.content-visible .h-search-ctrl-button button {
+    padding: 19px 6px;
+    margin-right: -1px;
+    border: 1px solid aqua;
+    box-sizing: border-box;
+    border-right-color: white;
+    border-radius: 4px 0px 0px 4px;
 }
 .h-search-ctrl-button span {
     font-size: 15px;
@@ -24,21 +29,14 @@
     overflow: hidden;
     transition: all 1.5s ease;
 }
+
 .h-search-container input{
     background: none;
     border: none;
 }
+
 .h-search-ctrl-button span:last-child {
     display: none;
-}
-
-.content-visible .h-search-container {
-    transition: all 1.5s ease;
-    width: 550px;
-    background: #F7F7F7;
-    border-radius: 5px;
-    border: 1px solid aqua;
-    padding: 10px 50px 50px 50px;
 }
 .content-visible .h-search-ctrl-button span:first-child {
     display: none;
@@ -46,6 +44,19 @@
 .content-visible .h-search-ctrl-button span:last-child {
     display: block;
 }
+
+.content-visible .h-search-container {
+    transition: all 1.5s ease;
+    width: 550px;
+    background: #F7F7F7;
+    border-radius: 0;
+    border: 1px solid aqua;
+    padding: 10px 50px 50px 50px;
+}
+.content-visible .h-search-container input{
+    border: 1px solid #b3ffff;
+}
+
 .h-search-container .btn.btn-info, .btn.btn-info {
     background-color: #44d1d5;
     border-color: #269abc;
@@ -54,4 +65,19 @@
 .h-search-container ul{
     max-height: 200px;
     overflow: scroll;
+}
+.h-search-container h3 {
+    text-align: center;
+}
+
+.h-search-container label, .h-search-container input {
+    display: inline-block;
+}
+.h-search-container input {
+    width: 55%;
+    margin: 0 10px;
+}
+.h-result-container {
+    max-height: 150px;
+    overflow-y: scroll;
 }
