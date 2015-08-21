@@ -1,9 +1,23 @@
-class Api::V1::AuthController < ApplicationController
+class Api::V1::AuthController < ActionController::Metal
+  include AbstractController::Rendering
+  include ActionController::ImplicitRender
+  #include ActionController::Serialization
+  #include ActiveModel::Serializer
+  include ActionController::MimeResponds
+  include AbstractController::Callbacks
+
+  include ActionController::Renderers::All
+
   respond_to :json
 
   def index
-    respond_with User.all
+    #respond_with User.all
+    render json: User.all
   end
+
+  # def index
+  #   self.response_body = "{name:233, mio: 'armen'}"
+  # end
 
   def show
     respond_with User.find(params[:id])
